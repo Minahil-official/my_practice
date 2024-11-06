@@ -26,31 +26,51 @@
 
 
 #positional arguments
-# def 
+def sum(a,b): 
+    print("a",a)
+    print("b",b)
 
+sum(4,3)
 
+#keword argument
+def sum(a,b): 
+    return a+b
 
+print(sum(a=3,b=8))
 
+# variable lenght arguments
+def vari(*a):
+    return a
+print(vari(2,3,5,6,7)) # return tuple
 
-
-
-
-
+def vari(**a):
+    return a
+print(vari(a= 1, b= 2,c= 3))# return a dictionary
 
 
 # #PARACTICE
-# my_str = str(input("enter your data:"))
-# r = my_str[::-1]
-# def reverse_str():
-#     return r
-# print(reverse_str())
-
 my_str = str(input("enter your data:"))
-def finding_vowel():
-    vowels = "a,e,i,o,u"
-    for i in vowels:
-        if vowels == my_str:
-            print(vowels)
-        else:
-            print("not correct")
-finding_vowel()
+r = my_str[::-1]
+def reverse_str():
+    return r
+print(reverse_str())
+
+
+# finding vowels
+
+def find_vowels(user_input):
+    vowels = "aeiouAEIOU"  
+    found_vowels = []      
+    
+    for char in user_input:
+        if char in vowels:
+            found_vowels.append(char)
+    
+    return found_vowels
+
+
+user_input = input("Enter a string: ")
+vowels_in_input = find_vowels(user_input)
+
+print("Vowels in the input string:", vowels_in_input)
+
